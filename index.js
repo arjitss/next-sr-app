@@ -9,6 +9,18 @@ const myReactElement = React.createElement(
   'Hello World from React'
 );
 
-ReactDOM.render(myReactElement, document.getElementById('app'));
+const Hello = function (props) {
+  return React.createElement(
+    'h1',
+    { className: 'orange' },
+    'Hello form Functional React at '
+  );
+};
+
+ReactDOM.render(
+  //myReactElement,
+  React.createElement(Hello, {}, null),
+  document.getElementById('app')
+);
 
 // rootElement.appendChild(myElement);
