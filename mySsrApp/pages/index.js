@@ -24,11 +24,7 @@ const Index = function (props) {
     setInterval(() => tick(), 1000);
   }, []);
 
-  return React.createElement(
-    'h1',
-    { className: 'orange' },
-    'Hello form Functional React at ' + currentTime
-  );
+  return <h1>Hello form Functional React at ' + {currentTime}</h1>;
 };
 
 // Next frame work takes care of rendering, so we do not need ReactDOM Render, method
