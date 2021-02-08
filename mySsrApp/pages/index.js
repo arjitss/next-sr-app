@@ -1,18 +1,10 @@
-//const rootElement = document.getElementById('app');
-// const myElement = document.createElement('h1');
-// myElement.className = 'orange';
-// myElement.innerText = 'Hello World';
+import React, { useEffect, useState } from 'react';
+import DigitalClock from '../src/DigitalClock';
 
-import React from 'react';
-
-// const myReactElement = React.createElement(
-//   'h1',
-//   { className: 'orange' },
-//   'Hello World from React'
-// );
-
-const Index = function (props) {
-  const [currentTime, setCurrentTimeWin] = React.useState(props.time);
+const Index = function () {
+  const [currentTime, setCurrentTimeWin] = useState(
+    new Date().toLocaleString()
+  );
 
   const tick = () => {
     setCurrentTimeWin(() => {
@@ -20,20 +12,15 @@ const Index = function (props) {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setInterval(() => tick(), 1000);
   }, []);
 
-  return <h1>Hello form Functional React at ' + {currentTime}</h1>;
+  return (
+    <h1>
+      <DigitalClock time={currentTime} />
+    </h1>
+  );
 };
-
-// Next frame work takes care of rendering, so we do not need ReactDOM Render, method
-// ReactDOM.render(
-//   //myReactElement,
-//   React.createElement(Hello, { time: new Date().toLocaleString() }, null),
-//   document.getElementById('app')
-// );
-
-// rootElement.appendChild(myElement);
 
 export default Index;
