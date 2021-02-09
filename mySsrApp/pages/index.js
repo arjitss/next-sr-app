@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DigitalClock from '../src/DigitalClock';
 import axios from 'axios';
+import Link from 'next/link';
 
 const Index = function (props) {
   const [currentTime, setCurrentTimeWin] = useState(
@@ -20,7 +21,10 @@ const Index = function (props) {
   };
 
   useEffect(() => {
-    setInterval(() => tick(), 1000);
+    const val = setInterval(() => tick(), 1000);
+    return () => {
+      clearInterval(val);
+    };
   }, []);
 
   return (
@@ -29,6 +33,9 @@ const Index = function (props) {
         <DigitalClock time={currentTime} />
       </h1>
       <ul>
+        <Link href="/sessions">
+          <a>Sessions</a>
+        </Link>
         {speakersData.speakersData.map((speaker) => {
           return (
             <li key={speaker.id}>
