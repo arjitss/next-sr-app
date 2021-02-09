@@ -24,9 +24,17 @@ const Index = function (props) {
 };
 
 Index.getInitialProps = function () {
-  return {
-    time: new Date().toLocaleString(),
-  };
+  // return {
+  //   time: new Date().toLocaleString(),
+  // };
+
+  return new Promise((resolve, reject) => {
+    setInterval(() => {
+      resolve({
+        time: new Date().toLocaleString(),
+      });
+    }, 3000);
+  });
 };
 
 export default Index;
