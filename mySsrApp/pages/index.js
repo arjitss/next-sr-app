@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import DigitalClock from '../src/DigitalClock';
 
-const Index = function () {
+const Index = function (props) {
   const [currentTime, setCurrentTimeWin] = useState(
-    new Date().toLocaleString()
+    props.time // new Date().toLocaleString()
   );
 
   const tick = () => {
@@ -21,6 +21,12 @@ const Index = function () {
       <DigitalClock time={currentTime} />
     </h1>
   );
+};
+
+Index.getInitialProps = function () {
+  return {
+    time: new Date().toLocaleString(),
+  };
 };
 
 export default Index;
