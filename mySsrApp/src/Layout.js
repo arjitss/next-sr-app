@@ -6,12 +6,10 @@ import Menu from './Menu';
 
 const Layout = function (props) {
   const { children } = props;
-  const funcRun = props.functionRun();
   return (
     <>
       <Header></Header>
       <Menu />
-      {funcRun}
       {children}
       <Footer />
     </>

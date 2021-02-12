@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 Menu.propTypes = {};
@@ -10,19 +11,25 @@ function Menu(props) {
         <div className="navbar">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Home
-              </a>
+              <Link href="/">
+                <a className="nav-link" href="#">
+                  Home
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Speakers
-              </a>
+              <Link href="/speakers">
+                <a className="nav-link" href="#">
+                  Speakers
+                </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Sessions
-              </a>
+              <Link href="/sessions">
+                <a className="nav-link" href="#">
+                  Sessions
+                </a>
+              </Link>
             </li>
           </ul>
         </div>

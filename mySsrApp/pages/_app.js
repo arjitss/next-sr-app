@@ -8,14 +8,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
-      <Layout
-        time={234}
-        functionRun={() => {
-          return 'Hello World';
-        }}
-      >
-        <Component />
-        {/** This is the child component, goes as a prop in surrounding component */}
+      <Layout>
+        <Component {...pageProps} />
       </Layout>
     </>
   );
