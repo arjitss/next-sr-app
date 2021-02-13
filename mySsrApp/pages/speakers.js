@@ -16,7 +16,7 @@ const Speakers = function (props) {
 
   const tick = () => {
     setCurrentTimeWin(() => {
-      return new Date().toLocaleString();
+      return new Date().toISOString();
     });
   };
 
@@ -55,14 +55,14 @@ Speakers.getInitialProps = function () {
       return {
         hasErrored: 'false',
         speakersData: response.data,
-        time: new Date().toLocaleString(),
+        time: new Date().toISOString(),
       };
     })
     .catch(() => {
       return {
         hasErrored: 'false',
         speakersData: error.message,
-        time: new Date().toLocaleString(),
+        time: new Date().toISOString(),
       };
     });
 
