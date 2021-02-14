@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 
 const Session = function (props) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!props.isLoading) {
+      setIsLoading(false);
+    }
+  }, [isLoading]);
+
   let sessionsData = props.sessionsData;
-  return (
+  return isLoading ? (
+    <div>
+      ` waiting for Data`
+      {console.log('yyyyyyy')}
+    </div>
+  ) : (
     <div>
       {props.hasErrored}
       <ul>
@@ -17,7 +30,7 @@ const Session = function (props) {
                   sessionId: session.id,
                 },
               }}
-              as={`session/${session.id}`}
+              as={`/session/${session.id}`}
               key={session.id + 'A'}
             >
               <a key={session.id + 'B'}>
@@ -42,6 +55,7 @@ Session.getInitialProps = () => {
         hasErrored: 'false',
         sessionsData: response.data,
         time: new Date().toLocaleString(),
+        isLoading: false,
       };
     })
     .catch(() => {
@@ -49,6 +63,7 @@ Session.getInitialProps = () => {
         hasErrored: 'false',
         sessionsData: error.message,
         time: new Date().toLocaleString(),
+        isLoading: false,
       };
     });
 
