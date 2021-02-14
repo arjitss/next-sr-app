@@ -13,10 +13,7 @@ const Session = function (props) {
 
   let sessionsData = props.sessionsData;
   return isLoading ? (
-    <div>
-      ` waiting for Data`
-      {console.log('yyyyyyy')}
-    </div>
+    <div>` waiting for Data`</div>
   ) : (
     <div>
       {props.hasErrored}

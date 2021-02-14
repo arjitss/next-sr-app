@@ -12,7 +12,7 @@ const Bootstrap = function () {
           </div>
           <div className="col-12 col-sm-8 text-lg-right">
             <div>
-              <img src="/static/SVCClogo.png" />
+              <img src="/public/SVCClogo.png" />
             </div>
             <h2>Silicon Valley Code Camp 2018</h2>
           </div>
@@ -53,7 +53,7 @@ const Bootstrap = function () {
             <div className="card col-4 cardmin">
               <img
                 className="card-img-top"
-                src="/static/speakers/Speaker-8367.jpg"
+                src="/public/speakers/Speaker-8367.jpg"
               />
               <div className="card-body">
                 <a
@@ -73,7 +73,7 @@ const Bootstrap = function () {
             <div className="card col-4 cardmin ">
               <img
                 className="card-img-top"
-                src="/static/speakers/Speaker-2920.jpg"
+                src="/public/speakers/Speaker-2920.jpg"
               />
               <div className="card-body">
                 <a
@@ -93,7 +93,7 @@ const Bootstrap = function () {
             <div className="card col-4 cardmin">
               <img
                 className="card-img-top"
-                src="/static/speakers/Speaker-1124.jpg"
+                src="/public/speakers/Speaker-1124.jpg"
               />
               <div className="card-body">
                 <a
@@ -114,7 +114,7 @@ const Bootstrap = function () {
             <div className="card col-4 cardmin">
               <img
                 className="card-img-top"
-                src="/static/speakers/Speaker-39062.jpg"
+                src="/public/speakers/Speaker-39062.jpg"
               />
               <div className="card-body">
                 <a

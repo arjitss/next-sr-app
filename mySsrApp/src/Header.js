@@ -1,5 +1,5 @@
 import React from 'react';
-import SVCCLogo from '../static/SVCClogo.png';
+import SVCCLogo from '../public/SVCClogo.png';
 
 function Header(props) {
   return (
