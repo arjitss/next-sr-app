@@ -1,4 +1,5 @@
 import React from 'react';
+import SVCCLogo from '../static/SVCClogo.png';
 
 function Header(props) {
   return (
@@ -11,7 +12,7 @@ function Header(props) {
           </div>
           <div className="col-12 col-sm-8 text-lg-right">
             <div>
-              <img src="/static/SVCClogo.png" />
+              <img src={SVCCLogo} />
             </div>
             <h2>Silicon Valley Code Camp 2018</h2>
           </div>
